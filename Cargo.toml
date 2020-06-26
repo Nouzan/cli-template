@@ -8,5 +8,5 @@ edition = "2018"
 clap-verbosity-flag = "0.3"
 structopt = "0.3"
 log = "0.4"
-simplelog = { version = "0.8", default-features = false }
+simplelog = { version = "0.8" }
 anyhow = "1.0"

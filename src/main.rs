@@ -3,6 +3,9 @@ use structopt::StructOpt;
 use simplelog::{ Config, TermLogger, TerminalMode };
 use anyhow::Result;
 
+#[macro_use]
+extern crate log;
+
 #[derive(Debug, StructOpt)]
 struct Opt {
     #[structopt(flatten)]
@@ -14,6 +17,6 @@ fn main() -> Result<()>{
     if let Some(level) = opt.verbose.log_level() {
         TermLogger::init(level.to_level_filter(), Config::default(), TerminalMode::Mixed)?;
     }
-    log::debug!("opt={:?}", opt);
+    debug!("opt={:?}", opt);
     Ok(())
 }
