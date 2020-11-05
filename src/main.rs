@@ -1,7 +1,7 @@
-use clap_verbosity_flag::Verbosity;
-use structopt::StructOpt;
-use simplelog::{ Config, TermLogger, TerminalMode };
 use anyhow::Result;
+use clap_verbosity_flag::Verbosity;
+use simplelog::{ConfigBuilder, TermLogger, TerminalMode};
+use structopt::StructOpt;
 
 #[macro_use]
 extern crate log;
@@ -12,10 +12,11 @@ struct Opt {
     verbose: Verbosity,
 }
 
-fn main() -> Result<()>{
+fn main() -> Result<()> {
     let opt = Opt::from_args();
+    let log_config = ConfigBuilder::new().build();
     if let Some(level) = opt.verbose.log_level() {
-        TermLogger::init(level.to_level_filter(), Config::default(), TerminalMode::Mixed)?;
+        TermLogger::init(level.to_level_filter(), log_config, TerminalMode::Mixed)?;
     }
     debug!("opt={:?}", opt);
     Ok(())
