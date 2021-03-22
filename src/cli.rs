@@ -35,6 +35,7 @@ impl Opt {
         let fmt = tracing_subscriber::fmt::layer()
             .with_writer(std::io::stderr)
             .with_target(false)
+            .with_timer(tracing_subscriber::fmt::time::ChronoLocal::default())
             .compact();
         tracing_subscriber::registry()
             .with(level)

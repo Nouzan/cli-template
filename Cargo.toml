@@ -1,7 +1,7 @@
 [package]
-name = "{{project-name}}"
+name = "tracing"
 version = "0.1.0"
-authors = ["{{authors}}"]
+authors = ["Nouzan <clobraindie@outlook.com>"]
 edition = "2018"
 
 [dependencies]
@@ -15,7 +15,7 @@ tracing = "0.1"
 tracing-attributes = "0.1"
 
 # tracing-subscriber
-tracing-subscriber = { version = "0.2", features = ["ansi"] }
+tracing-subscriber = "0.2"
 
 # tracing for futures support
 tracing-futures = "0.2"
