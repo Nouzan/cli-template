@@ -7,6 +7,15 @@ edition = "2018"
 [dependencies]
 clap-verbosity-flag = "0.3"
 structopt = "0.3"
-log = "0.4"
-simplelog = { version = "0.8" }
 anyhow = "1.0"
+
+# tracing
+log = "0.4"
+tracing = "0.1"
+tracing-attributes = "0.1"
+
+# tracing-subscriber
+tracing-subscriber = { version = "0.2", features = ["ansi"] }
+
+# tracing for futures support
+tracing-futures = "0.2"
