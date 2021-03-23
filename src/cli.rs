@@ -13,7 +13,7 @@ pub(crate) struct Opt {
     verbose: Verbosity,
 
     #[structopt(flatten)]
-    config: Config,
+    pub config: Config,
 }
 
 impl Opt {
